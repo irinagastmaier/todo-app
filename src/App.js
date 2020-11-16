@@ -2,7 +2,7 @@ import React from 'react' // you don't need to mention it, because the 17.01 ver
 import Navigation from './Components/Navigation'
 import TodoContainer from'./Components/TodoContainer'
 import ToDonesContainer from './Components/ToDonesContainer'
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {HashRouter, Route, Switch} from 'react-router-dom'
 import About from './Components/About'
 import NotFound from "./Components/NotFound"
 import'./css/App.scss'
@@ -103,7 +103,7 @@ class App extends React.Component {
   // here is !, because it is going through all the items and select only if the value if false
   let toDones= this.state.todoItems.filter(item=>item.done);
   return (
-    <BrowserRouter>
+    <HashRouter>
     <div className="app">
      <Navigation/>
      <Switch>
@@ -118,7 +118,7 @@ class App extends React.Component {
      </Switch>
      {/* here it is passing the properties as a props to the child container */}
     </div>
-    </BrowserRouter>
+    </HashRouter>
     );}
 }
 
